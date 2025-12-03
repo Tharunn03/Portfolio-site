@@ -122,19 +122,6 @@ body::selection
     box-sizing: border-box;
     background: var(--bgcolor);
 }
-#title
-{
-    /* position: relative; */
-    font-size: 35px;
-    margin: 12px;
-}
-#info
-{
-    height: fit-content;
-    margin: 12px;
-}
-
-
 .page
 {
     display: none;
@@ -143,6 +130,19 @@ body::selection
 {
     margin-top: 20px;
 }
+#hometitle, #exptitle, #prjtitle, #edutitle,#achtitle, #rsmtitle
+{
+    font-size: 35px;
+}
+
+
+/* typrewriting effect */
+.typed {
+    /* white-space: nowrap; */
+    overflow: hidden;
+    /* border-right: 2px solid var(--textcolor); */
+}
+
 
 
 

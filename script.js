@@ -1,38 +1,68 @@
+// --------------------------- THEME SWITCH ---------------------------
 const theme = document.getElementById("themebtn");
-const colorlight = "#9c9c9c"
-const colordark = "#222"
+const colorlight = "#9c9c9c";
+const colordark  = "#222";
 
 function applyTheme() {
-    // If the button currently says Dark, user wants dark mode
     if (theme.innerText === "Dark") {
         document.documentElement.style.setProperty("--bgcolor", colordark);
         document.documentElement.style.setProperty("--textcolor", colorlight);
         theme.innerText = "Light";
-    } 
-    else {
+    } else {
         document.documentElement.style.setProperty("--bgcolor", colorlight);
         document.documentElement.style.setProperty("--textcolor", colordark);
         theme.innerText = "Dark";
     }
 }
 
-// Page toggle system
-function showPage(pageId) {
-    // hide all pages
-    document.querySelectorAll(".page").forEach(p => p.style.display = "none");
+theme.addEventListener("click", applyTheme);
 
-    // show selected page
-    document.getElementById(pageId).style.display = "block";
+
+// --------------------------- TYPEWRITER ENGINE ---------------------------
+function typeWriter(element, speed = 8) {
+    const text = element.dataset.fulltext || element.textContent.trim();
+    element.dataset.fulltext = text;
+
+    element.textContent = "";
+    let i = 0;
+
+    (function type() {
+        if (i < text.length) {
+            element.textContent += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        }
+    })();
 }
 
-// Button click connections
-document.getElementById("hme").onclick = () => showPage("homePage");
-document.getElementById("exp").onclick = () => showPage("expPage");
-document.getElementById("prj").onclick = () => showPage("prjPage");
-document.getElementById("edu").onclick = () => showPage("eduPage");
-document.getElementById("ach").onclick = () => showPage("achPage");
 
-// show home by default
+// --------------------------- PAGE TOGGLER ---------------------------
+function showPage(pageId) {
+    // Hide all
+    document.querySelectorAll(".page").forEach(p => {
+        p.style.display = "none";
+    });
+
+    // Show selected page
+    const page = document.getElementById(pageId);
+    page.style.display = "block";
+
+    // Start typewriter on all .typed inside this page
+    page.querySelectorAll(".typed").forEach(el => {
+        typeWriter(el);
+    });
+}
+
+
+// --------------------------- BUTTON CONNECTIONS ---------------------------
+// This will automatically link ANY button with data-page=""
+document.querySelectorAll(".optnbtn[data-page]").forEach(btn => {
+    btn.addEventListener("click", () => {
+        const targetPage = btn.dataset.page;
+        showPage(targetPage);
+    });
+});
+
+
+// --------------------------- DEFAULT PAGE ---------------------------
 showPage("homePage");
-
-theme.addEventListener("click", applyTheme);
