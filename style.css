@@ -141,8 +141,26 @@ body::selection
 {
     font-size: 35px;
 }
+.project
+{
+    display: flex;
+    width: 98%;
+    height: 60%;
+    /* height: 100%; */
+    border: 3px dotted var(--textcolor);
+    background: var(--bgcolor);
+}
+#pjt1
+{
+    width: 100px;
+    height: 100px;
+    border: 3px solid var(--textcolor);
+    /* height: auto; */
+    /* height: 100%; */
+}
 
 
+/* ------------------------------------------------------------------------------------------ */
 /* drop a message page */
 .inputbox
 {
