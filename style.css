@@ -8,13 +8,19 @@
     --textcolor: #222;
 }
 
+*
+{ 
+    font-family: 'aquarius';
+    cursor: none;
+}
+
 
 /* style.css (replacement) */
 body {
     color: var(--textcolor);
     background-color: var(--bgcolor);
     margin: 0;
-    font-family: system-ui, sans-serif;
+    cursor: none;
 }
 body::selection
 {
@@ -37,7 +43,6 @@ body::selection
     flex-direction: column;
     gap: 10px;
     resize: none;
-    font-family: 'aquarius';
     border: 3px solid var(--textcolor);
     padding: 10px;
     min-width: 250px;
@@ -54,7 +59,7 @@ body::selection
     font-size: 15px;
     color: var(--textcolor);
     height: 40px;
-    font-family: 'aquarius';
+    /* font-family: 'aquarius'; */
     border: 3px solid var(--textcolor);
     background-color: var(--bgcolor);
     opacity: 0;
@@ -72,6 +77,7 @@ body::selection
 }
 .optnbtn:hover
 {
+    /* cursor: none; */
     background-color: var(--textcolor);
     color: var(--bgcolor);
 }
@@ -92,12 +98,13 @@ body::selection
 #themebtn
 {
     color: var(--textcolor);
-    font-family: 'aquarius';
+    /* font-family: 'aquarius'; */
     background-color: var(--bgcolor);
     border: 3px solid var(--textcolor);
 }
 #themebtn:hover
 {
+    /* cursor: none; */
     background-color: var(--textcolor);
     color: var(--bgcolor);
 }
@@ -112,7 +119,7 @@ body::selection
 .mainbox {
     max-width: 90%;
     margin: auto;
-    font-family: 'aquarius';
+    /* font-family: 'aquarius'; */
     border: 3px solid var(--textcolor);
     padding: 10px;
     padding-top: 0px;
@@ -138,34 +145,27 @@ body::selection
 
 /* typrewriting effect */
 .typed {
-    /* white-space: nowrap; */
     overflow: hidden;
-    /* border-right: 2px solid var(--textcolor); */
 }
 
-
-
-
-
-
-
-
-
-/* --- Typewriter Effect --- */
-/* 
-.typewriter {
-    overflow: hidden;
-    border-right: 2px solid var(--textcolor);
-    width: 0;
-    animation: typing 1s steps(100) forwards,
-               blink 0.7s step-end infinite;
+/* cursor */
+#cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 25px;
+  background: var(--textcolor);
+  /* border-radius: 50%; */
+  pointer-events: none; /*So it doesn’t block clicks*/
+  transform: translate(-50%, -50%);
+  transition: background-color 0.5s, transform 0.5s ease;
+  transition: left 0.1s ease, top 0.1s ease;
 }
 
-@keyframes typing {
-    from { width: 0; }
-    to   { width: 100%; }
-}
+#cursor:active
+{
+    transform: scale(0.8);
+    transform: translate(-50%, -50%);
 
-@keyframes blink {
-    0% { border-right-color: transparent; }
-} */
+}

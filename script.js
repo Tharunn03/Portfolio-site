@@ -2,6 +2,7 @@
 const theme = document.getElementById("themebtn");
 const colorlight = "#9c9c9c";
 const colordark  = "#222";
+const circle = document.getElementById('cursor');
 
 function applyTheme() {
     if (theme.innerText === "Dark") {
@@ -61,6 +62,22 @@ document.querySelectorAll(".optnbtn[data-page]").forEach(btn => {
         const targetPage = btn.dataset.page;
         showPage(targetPage);
     });
+});
+
+
+
+// --------------------------- CURSOR ---------------------------
+window.addEventListener('mousemove', e => {
+  circle.style.left = e.clientX + 'px';
+  circle.style.top = e.clientY + 'px';
+});
+
+window.addEventListener('mousedown', () => {
+  circle.style.transform = 'translate(-50%, -50%) scale(0.8)';
+});
+
+window.addEventListener('mouseup', () => {
+  circle.style.transform = 'translate(-50%, -50%) scale(1)';
 });
 
 
