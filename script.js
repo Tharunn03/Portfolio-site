@@ -16,4 +16,23 @@ function applyTheme() {
     }
 }
 
+// Page toggle system
+function showPage(pageId) {
+    // hide all pages
+    document.querySelectorAll(".page").forEach(p => p.style.display = "none");
+
+    // show selected page
+    document.getElementById(pageId).style.display = "block";
+}
+
+// Button click connections
+document.getElementById("hme").onclick = () => showPage("homePage");
+document.getElementById("exp").onclick = () => showPage("expPage");
+document.getElementById("prj").onclick = () => showPage("prjPage");
+document.getElementById("edu").onclick = () => showPage("eduPage");
+document.getElementById("ach").onclick = () => showPage("achPage");
+
+// show home by default
+showPage("homePage");
+
 theme.addEventListener("click", applyTheme);
