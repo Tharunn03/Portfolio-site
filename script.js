@@ -1,6 +1,6 @@
 // --------------------------- THEME SWITCH ---------------------------
 const theme = document.getElementById("themebtn");
-const colorlight = "#9c9c9c";
+const colorlight = "#787878";
 const colordark  = "#222";
 const circle = document.getElementById('cursor');
 
