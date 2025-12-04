@@ -119,7 +119,6 @@ body::selection
 .mainbox {
     max-width: 90%;
     margin: auto;
-    /* font-family: 'aquarius'; */
     border: 3px solid var(--textcolor);
     padding: 10px;
     padding-top: 0px;
@@ -141,6 +140,16 @@ body::selection
 {
     font-size: 35px;
 }
+#homePage
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+
 .project
 {
     display: flex;
@@ -148,24 +157,38 @@ body::selection
     justify-content: center;
     width: 99%;
     height: 500px;
-    /* height: 100%; */
-    border: 3px dotted var(--textcolor);
+    border: 3px var(--textcolor);
     background: var(--bgcolor);
 }
-#pjt1
+#pjt1, #pjt2, #pjt3
 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content:baseline;
     margin: 20px;
-    width: 300px;
-    height: 300px;
-    /* height: 90%; */
+    width: 350px;
+    height: 90%;
     border: 3px solid var(--textcolor);
-    /* padding: 15px; */
-    /* height: auto; */
-    /* height: 100%; */
+}
+#img
+{
+    margin: 5%;
+    border: 3px solid var(--textcolor);
+    width: 90%;
+    height: 50%;
+}
+#tech
+{
+    display: flex;
+    flex-direction: row;
+}
+.tool
+{
+    margin: 5px;
+    padding: 8px;
+    border: 3px solid var(--textcolor);
+    animation: blink-in forwards;
 }
 
 
