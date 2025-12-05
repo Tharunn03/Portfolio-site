@@ -81,5 +81,28 @@ window.addEventListener('mouseup', () => {
 });
 
 
+// --------------------------- LOADING SCREEN ---------------------------
+const loadbar = document.getElementById("box");
+const frame = document.getElementById("frame");
+
+setTimeout(() => {
+
+    
+    // hide loading animation
+    loadbar.style.display = "none";
+    
+    // show main content
+    frame.style.display = "flex";
+    
+    // show cursor again
+    circle.style.display = "block";
+    
+    // load home page
+    showPage("homePage");
+
+}, 5000);
+
+
+
 // --------------------------- DEFAULT PAGE ---------------------------
-showPage("homePage");
+// showPage("homePage");
