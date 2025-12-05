@@ -17,10 +17,11 @@
 
 /* style.css (replacement) */
 body {
-    /* display: flex;
+    display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center; */
+    justify-content: center;
+    height: 100vh;
     color: var(--textcolor);
     background-color: var(--bgcolor);
     margin: 0;
@@ -35,14 +36,28 @@ body::selection
 /* loading screen */
 #box
 {
-    background-color: var(--textcolor);
+    background-color: var(--bgcolor);
     display: flex;
-    /* flex-direction: row; */
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     width: 165px;
     height: 20px;
-    /* border: 3px solid black; */
+}
+#loadingtext
+{
+    font-size: 25px;
+    color: var(--textcolor);
+    background-color: var(--bgcolor);
+}
+#loadingbar
+{
+    display: flex;
+    flex-direction: row;
+}
+#box1, #box2, #box3, #box4, #box5
+{
+    background-color: var(--textcolor);
 }
 
 .load

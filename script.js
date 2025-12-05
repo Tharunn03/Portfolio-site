@@ -1,4 +1,5 @@
 // --------------------------- THEME SWITCH ---------------------------
+const mainbody = document.getElementById('mainbody');
 const theme = document.getElementById("themebtn");
 const colorlight = "#787878";
 const colordark  = "#222";
@@ -87,6 +88,10 @@ const frame = document.getElementById("frame");
 
 setTimeout(() => {
 
+    mainbody.style.display = "block";
+    mainbody.style.alignItems = "start";
+    mainbody.style.justifyContent = "start";
+
     
     // hide loading animation
     loadbar.style.display = "none";
@@ -100,7 +105,7 @@ setTimeout(() => {
     // load home page
     showPage("homePage");
 
-}, 5000);
+}, 1000);
 
 
 
