@@ -231,6 +231,16 @@ body::selection
     height: 90%;
     border: 3px solid var(--textcolor);
 }
+.pjtbox
+{
+    transition: transform 2 ease-in;
+}
+.pjtbox:hover
+{
+    transform: scale(1.1);
+    /* background-color: var(--textcolor);
+    color: var(--bgcolor); */
+}
 .imgclass
 {
     margin: 5%;
