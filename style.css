@@ -241,7 +241,10 @@ body::selection
 .tech
 {
     display: flex;
+    /* align-items: ; */
+    justify-content: center;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 .tool
 {
