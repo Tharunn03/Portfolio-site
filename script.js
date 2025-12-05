@@ -1,18 +1,21 @@
 // --------------------------- THEME SWITCH ---------------------------
 const mainbody = document.getElementById('mainbody');
 const theme = document.getElementById("themebtn");
-const colorlight = "#787878";
-const colordark  = "#222";
+const bgcolor = "#eeefef";
+const textcolor  = "#454444";
+const textcolord = "#fea133";
+const bgcolord = "#232223";
+
 const circle = document.getElementById('cursor');
 
 function applyTheme() {
     if (theme.innerText === "Go Dark") {
-        document.documentElement.style.setProperty("--bgcolor", colordark);
-        document.documentElement.style.setProperty("--textcolor", colorlight);
+        document.documentElement.style.setProperty("--bgcolor", bgcolord);
+        document.documentElement.style.setProperty("--textcolor", textcolord);
         theme.innerText = "Go Light";
     } else {
-        document.documentElement.style.setProperty("--bgcolor", colorlight);
-        document.documentElement.style.setProperty("--textcolor", colordark);
+        document.documentElement.style.setProperty("--bgcolor", bgcolor);
+        document.documentElement.style.setProperty("--textcolor", textcolor);
         theme.innerText = "Go Dark";
     }
 }
@@ -46,8 +49,11 @@ function showPage(pageId) {
     });
 
     // Show selected page
+    // const btn = document.getElementsByClassName(optnbtn);
     const page = document.getElementById(pageId);
     page.style.display = "block";
+    // btn.style.bgcolor = textcolor;
+    // btn.style.textcolor = bgcolor;
 
     // Start typewriter on all .typed inside this page
     page.querySelectorAll(".typed").forEach(el => {

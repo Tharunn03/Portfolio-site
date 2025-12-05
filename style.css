@@ -2,10 +2,16 @@
   font-family: "aquarius";
   src:url("Fonts/aquarius.regular-mono.ttf") format(truetype);
 }
+@font-face {
+  font-family: 'departure';
+  src: url("Fonts/DepartureMono-Regular.otf") format(opentype);
+}
+
+
 :root
 {
-    --bgcolor: #787878;
-    --textcolor: #222;
+    --bgcolor: #eeefef;
+    --textcolor: #454444;
 }
 
 *
@@ -122,8 +128,8 @@ body::selection
     /* font-family: 'aquarius'; */
     border: 3px solid var(--textcolor);
     background-color: var(--bgcolor);
-    opacity: 0;
-    animation: blink-in forwards;
+    /* opacity: 0; */
+    /* animation: blink-in 1s forwards; */
 }
 #hme { animation-duration: 0.8s;}
 #exp { animation-duration: 0.7s;}
@@ -134,6 +140,7 @@ body::selection
 .optnbtn:active
 {
     transform: scale(0.95);
+    animation: blink-in 0.1s forwards;
 }
 .optnbtn:hover
 {
@@ -141,6 +148,11 @@ body::selection
     background-color: var(--textcolor);
     color: var(--bgcolor);
 }
+/* .optnbtn::after
+{
+    background-color: var(--textcolor);
+    color: var(--bgcolor);
+} */
 
 @keyframes blink-in {
     0% { opacity: 0; }
@@ -209,7 +221,7 @@ body::selection
     height: 100%;
 }
 
-
+/* -------------PROJECT TAB------------ */
 .project
 {
     display: flex;
@@ -220,7 +232,8 @@ body::selection
     border: 3px var(--textcolor);
     background: var(--bgcolor);
 }
-#pjt1, #pjt2, #pjt3
+/* #pjt1, #pjt2, #pjt3 */
+.pjtbox
 {
     display: flex;
     flex-direction: column;
@@ -231,16 +244,20 @@ body::selection
     height: 90%;
     border: 3px solid var(--textcolor);
 }
-.pjtbox
+/* .pjtbox
 {
     transition: transform 2 ease-in;
-}
+} */
 .pjtbox:hover
 {
-    transform: scale(1.1);
-    /* background-color: var(--textcolor);
-    color: var(--bgcolor); */
+    /* transform: scale(1.03); */
+    animation: scale 0.3s forwards;
 }
+@keyframes scale {
+    0% { scale: 1; }
+    100% { scale: 1.03; }
+}
+
 .imgclass
 {
     margin: 5%;
@@ -251,7 +268,6 @@ body::selection
 .tech
 {
     display: flex;
-    /* align-items: ; */
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
