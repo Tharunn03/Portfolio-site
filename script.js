@@ -6,14 +6,14 @@ const colordark  = "#222";
 const circle = document.getElementById('cursor');
 
 function applyTheme() {
-    if (theme.innerText === "Dark") {
+    if (theme.innerText === "Go Dark") {
         document.documentElement.style.setProperty("--bgcolor", colordark);
         document.documentElement.style.setProperty("--textcolor", colorlight);
-        theme.innerText = "Light";
+        theme.innerText = "Go Light";
     } else {
         document.documentElement.style.setProperty("--bgcolor", colorlight);
         document.documentElement.style.setProperty("--textcolor", colordark);
-        theme.innerText = "Dark";
+        theme.innerText = "Go Dark";
     }
 }
 
@@ -105,7 +105,7 @@ setTimeout(() => {
     // load home page
     showPage("homePage");
 
-}, 1000);
+}, 3000);
 
 
 

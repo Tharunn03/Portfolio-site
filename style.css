@@ -80,11 +80,11 @@ body::selection
 @keyframes blink
 {
      0% { opacity: 0; }
-    20% { opacity: 0.5 }
+    /* 20% { opacity: 0.5 }
     40% { opacity: 1; }
     60% { opacity: 1; }
-    80% { opacity: 0.4; }
-    100% { opacity: 0; }
+    80% { opacity: 0.4; } */
+    100% { opacity: 1; }
 }
 /* #frame { display: none;} */
 
@@ -231,14 +231,14 @@ body::selection
     height: 90%;
     border: 3px solid var(--textcolor);
 }
-#img
+.imgclass
 {
     margin: 5%;
     border: 3px solid var(--textcolor);
     width: 90%;
     height: 50%;
 }
-#tech
+.tech
 {
     display: flex;
     flex-direction: row;
